@@ -38,6 +38,9 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		CD74267E1FB719F30034E5EB /* RNTClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD74267D1FB719F30034E5EB /* RNTClockManager.m */; };
+		CD7426811FB720720034E5EB /* ClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7426801FB720720034E5EB /* ClockView.m */; };
+		CD7426841FB73CFC0034E5EB /* UIColor+HexString.h in Sources */ = {isa = PBXBuildFile; fileRef = CD7426831FB73CFC0034E5EB /* UIColor+HexString.h */; };
+		CD7426861FB73D370034E5EB /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7426851FB73D370034E5EB /* UIColor+HexString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,6 +290,10 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		CD74267D1FB719F30034E5EB /* RNTClockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNTClockManager.m; path = reactnativeclock/RNTClockManager.m; sourceTree = "<group>"; };
+		CD74267F1FB720720034E5EB /* ClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClockView.h; path = reactnativeclock/ClockView.h; sourceTree = "<group>"; };
+		CD7426801FB720720034E5EB /* ClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClockView.m; path = reactnativeclock/ClockView.m; sourceTree = "<group>"; };
+		CD7426831FB73CFC0034E5EB /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexString.h"; path = "reactnativeclock/UIColor+HexString.h"; sourceTree = "<group>"; };
+		CD7426851FB73D370034E5EB /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexString.m"; path = "reactnativeclock/UIColor+HexString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +432,7 @@
 		13B07FAE1A68108700A75B9A /* reactnativeclock */ = {
 			isa = PBXGroup;
 			children = (
+				CD7426821FB73CED0034E5EB /* utils */,
 				CD7426601FB718250034E5EB /* components */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -543,8 +551,19 @@
 			isa = PBXGroup;
 			children = (
 				CD74267D1FB719F30034E5EB /* RNTClockManager.m */,
+				CD74267F1FB720720034E5EB /* ClockView.h */,
+				CD7426801FB720720034E5EB /* ClockView.m */,
 			);
 			name = clock;
+			sourceTree = "<group>";
+		};
+		CD7426821FB73CED0034E5EB /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				CD7426831FB73CFC0034E5EB /* UIColor+HexString.h */,
+				CD7426851FB73D370034E5EB /* UIColor+HexString.m */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1001,7 +1020,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD7426861FB73D370034E5EB /* UIColor+HexString.m in Sources */,
+				CD7426841FB73CFC0034E5EB /* UIColor+HexString.h in Sources */,
 				CD74267E1FB719F30034E5EB /* RNTClockManager.m in Sources */,
+				CD7426811FB720720034E5EB /* ClockView.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);

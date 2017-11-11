@@ -1,6 +1,8 @@
 #import <UIKit/UIKit.h>
 #import <React/RCTViewManager.h>
 
+#import "ClockView.h"
+
 @interface RNTClockManager : RCTViewManager
 @end
 
@@ -8,9 +10,12 @@
 
 RCT_EXPORT_MODULE()
 
+RCT_EXPORT_VIEW_PROPERTY(color, NSString)
+
+
 - (UIView *)view
 {
-  return [[UIView alloc] init];
+  return [[ClockView alloc] init];
 }
 
 @end

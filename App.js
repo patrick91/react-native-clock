@@ -18,14 +18,37 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<{}> {
+  state = {
+    color: "#f1f"
+  };
+
+  componentDidMount() {
+    let i = 0;
+    const colors = ["#ff1", "#f11", "#111", "#f1f"];
+
+    this.interval = setInterval(
+      () =>
+        this.setState({
+          color: colors[i++ % colors.length]
+        }),
+      2000
+    );
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <Clock />
-        <Text>Clock</Text>
+        <Clock
+          color={this.state.color}
+          style={{
+            width: 200,
+            height: 200
+          }}
+        />
+        <Text>{this.state.color}</Text>
       </View>
     );
   }
