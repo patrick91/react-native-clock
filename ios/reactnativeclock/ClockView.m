@@ -26,20 +26,6 @@
   CGFloat cx = rect.size.width / 2;
   CGFloat cy = rect.size.height / 2;
 
-  // DEBUG
-  
-  [[UIColor brownColor] set];
-  CGContextSetLineWidth(context, 1.0f);
-  CGContextMoveToPoint(context, 0, cx);
-  CGContextAddLineToPoint(context, cx * 2, cx);
-  CGContextStrokePath(context);
-
-  [[UIColor redColor] set];
-  CGContextSetLineWidth(context, 1.0f);
-  CGContextMoveToPoint(context, cx, 0);
-  CGContextAddLineToPoint(context, cx, cx * 2);
-  CGContextStrokePath(context);
-
   [_hoursColor setFill];
   
   // draw ticks
