@@ -114,6 +114,16 @@
   
   CGContextRestoreGState(context);
   
+  // seconds circle
+
+  CGFloat ir = cx * 0.08;
+  CGFloat circleX = cx + cos(_secondsAngle) * (secondsWidth - ir);
+  CGFloat circleY = cy + sin(_secondsAngle) * (secondsWidth - ir) ;
+
+  CGContextSetLineWidth(context,5);
+  CGContextAddArc(context, circleX, circleY, ir, 0.0, M_PI*2, YES);
+  CGContextFillPath(context);
+
   // central circle
   CGContextSetLineWidth(context,5);
   CGContextAddArc(context, cx, cy, cx * 0.04, 0.0, M_PI*2, YES);
