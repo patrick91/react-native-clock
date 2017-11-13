@@ -14,8 +14,8 @@ RCT_EXPORT_VIEW_PROPERTY(secondsColor, NSString)
 RCT_EXPORT_VIEW_PROPERTY(minutesColor, NSString)
 RCT_EXPORT_VIEW_PROPERTY(hoursColor, NSString)
 RCT_EXPORT_VIEW_PROPERTY(seconds, int)
-RCT_EXPORT_VIEW_PROPERTY(minute, int)
-RCT_EXPORT_VIEW_PROPERTY(hour, int)
+RCT_EXPORT_VIEW_PROPERTY(minutes, int)
+RCT_EXPORT_VIEW_PROPERTY(hours, int)
 
 
 - (UIView *)view

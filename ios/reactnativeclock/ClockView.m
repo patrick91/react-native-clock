@@ -7,8 +7,8 @@
   UIColor * _minutesColor;
   UIColor * _hoursColor;
   CGFloat _secondsAngle;
-  CGFloat _minuteAngle;
-  CGFloat _hourAngle;
+  CGFloat _minutesAngle;
+  CGFloat _hoursAngle;
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -80,7 +80,7 @@
   
   CGContextSaveGState(context);
   CGContextTranslateCTM(context, cx, cy);
-  CGContextRotateCTM(context, _minuteAngle);
+  CGContextRotateCTM(context, _minutesAngle);
   
   CGContextFillRect(context, rectangle);
   
@@ -101,7 +101,7 @@
   
   CGContextSaveGState(context);
   CGContextTranslateCTM(context, cx, cy);
-  CGContextRotateCTM(context, _hourAngle);
+  CGContextRotateCTM(context, _hoursAngle);
   
   CGContextFillRect(context, hourRectangle);
   
@@ -162,24 +162,24 @@
   [self setNeedsDisplay];
 }
 
-- (void)setMinute:(int) minute {
+- (void)setMinutes:(int) minute {
   // every minute is one 60th of a circle
   CGFloat angle = 360 / 60 * minute;
   // remove 180 degrees to start at -90
   angle -= 90;
   
-  _minuteAngle = M_PI / 180 * angle;
+  _minutesAngle = M_PI / 180 * angle;
   
   [self setNeedsDisplay];
 }
 
-- (void)setHour:(int) hour {
+- (void)setHours:(int) hour {
   // every hour is one 12th of a circle
   CGFloat angle = 360 / 12 * hour;
   // remove 180 degrees to start at -90
   angle -= 90;
   
-  _hourAngle = M_PI / 180 * angle;
+  _hoursAngle = M_PI / 180 * angle;
   
   [self setNeedsDisplay];
 }

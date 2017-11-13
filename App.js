@@ -41,8 +41,8 @@ export default class App extends Component<{}> {
     const { time } = this.state;
 
     const seconds = time.getSeconds();
-    const minute = time.getMinutes();
-    const hour = time.getHours();
+    const minutes = time.getMinutes();
+    const hours = time.getHours();
 
     return (
       <View style={styles.container}>
@@ -54,15 +54,15 @@ export default class App extends Component<{}> {
           minutesColor="#000"
           hoursColor="#000"
           seconds={seconds}
-          minute={minute}
-          hour={hour}
+          minutes={minutes}
+          hours={hours}
           style={{
             width: 200,
             height: 200
           }}
         />
         <Text>
-          {hour}:{minute}:{seconds}
+          {hours}:{minutes}:{seconds}
         </Text>
       </View>
     );

@@ -13,8 +13,8 @@ ClockView.propTypes = {
   minutesColor: PropTypes.string,
   hoursColor: PropTypes.string,
   seconds: PropTypes.number,
-  minute: PropTypes.number,
-  hour: PropTypes.number
+  minutes: PropTypes.number,
+  hours: PropTypes.number
 };
 
 var RNTClock = requireNativeComponent("RNTClock", ClockView);
