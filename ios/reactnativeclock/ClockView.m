@@ -34,8 +34,8 @@
     CGFloat angle = M_PI * 2 / 60 * i;
     CGFloat r = cx * 0.9;
     
-    CGFloat w = cx * (i % 5 == 0 ? 0.2 : 0.1);
-    CGFloat h = w * (i % 5 == 0 ? 0.2 : 0.1);
+    CGFloat w = cx * (i % 5 == 0 ? 0.2 : 0.08);
+    CGFloat h = w * (i % 5 == 0 ? 0.2 : 0.2);
         
     CGFloat x = cx + cos(angle) * r;
     CGFloat y = cy + sin(angle) * r;
