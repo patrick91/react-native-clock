@@ -10,7 +10,9 @@ class ClockView extends React.Component {
 
 ClockView.propTypes = {
   color: PropTypes.string,
-  angle: PropTypes.number
+  seconds: PropTypes.number,
+  minute: PropTypes.number,
+  hour: PropTypes.number
 };
 
 var RNTClock = requireNativeComponent("RNTClock", ClockView);

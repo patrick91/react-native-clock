@@ -20,24 +20,30 @@ const instructions = Platform.select({
 export default class App extends Component<{}> {
   state = {
     color: "#f1f",
-    angle: 0
+    time: new Date()
   };
 
   componentDidMount() {
     let i = 0;
-    const colors = ["#ff1"];
+    const colors = ["#f1f"];
 
     this.interval = setInterval(
       () =>
         this.setState({
           color: colors[i++ % colors.length],
-          angle: i
+          time: new Date()
         }),
       0
     );
   }
 
   render() {
+    const { time } = this.state;
+
+    const seconds = time.getSeconds();
+    const minute = time.getMinutes();
+    const hour = time.getHours();
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
@@ -45,13 +51,15 @@ export default class App extends Component<{}> {
         <Text style={styles.instructions}>{instructions}</Text>
         <Clock
           color={this.state.color}
-          angle={this.state.angle}
+          seconds={seconds}
+          minute={minute}
+          hour={hour}
           style={{
             width: 200,
             height: 200
           }}
         />
-        <Text>{this.state.color}</Text>
+        <Text>{hour}:{minute}:{seconds}</Text>
       </View>
     );
   }
