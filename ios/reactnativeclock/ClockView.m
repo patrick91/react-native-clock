@@ -46,7 +46,7 @@
   
   for (int i = 0; i < 60; i++) {
     CGFloat angle = M_PI * 2 / 60 * i;
-    CGFloat r = cx * 0.8;
+    CGFloat r = cx * 0.9;
     
     CGFloat w = cx * (i % 5 == 0 ? 0.2 : 0.1);
     CGFloat h = w * (i % 5 == 0 ? 0.2 : 0.1);
@@ -54,7 +54,7 @@
     CGFloat x = cx + cos(angle) * r;
     CGFloat y = cy + sin(angle) * r;
     
-    CGRect tick = CGRectMake(- w / 2, - h / 2, w, h);
+    CGRect tick = CGRectMake(- w, - h / 2, w, h);
     
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, x, y);

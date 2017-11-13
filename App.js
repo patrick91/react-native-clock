@@ -19,18 +19,13 @@ const instructions = Platform.select({
 
 export default class App extends Component<{}> {
   state = {
-    color: "#f1f",
     time: new Date()
   };
 
   componentDidMount() {
-    let i = 0;
-    const colors = ["#f1f"];
-
     this.interval = setInterval(
       () =>
         this.setState({
-          color: colors[i++ % colors.length],
           time: new Date()
         }),
       0
