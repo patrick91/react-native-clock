@@ -128,12 +128,10 @@
   
   CGContextRestoreGState(context);
   
-  // DEBUG
-  
+  // central circle
   CGContextSetLineWidth(context,5);
-  CGContextSetRGBStrokeColor(context,0.8,0.8,0.8,1.0);
-  CGContextAddArc(context,cx,cy,30,0.0,M_PI*2,YES);
-  CGContextStrokePath(context);
+  CGContextAddArc(context, cx, cy, cx * 0.04, 0.0, M_PI*2, YES);
+  CGContextFillPath(context);
 }
 
 - (void)setSecondsColor:(NSString *) colorString {
