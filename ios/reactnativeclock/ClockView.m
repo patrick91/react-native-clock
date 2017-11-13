@@ -51,8 +51,10 @@
     CGContextRestoreGState(context);
   }
   
+  CGContextSetShadow(context, CGSizeMake(0.0, -5.0), 10.0);
+
   // draw minutes
-  
+
   [_minutesColor setFill];
 
   CGFloat minuteWidth = cx * 1;
