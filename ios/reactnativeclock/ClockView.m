@@ -9,11 +9,17 @@
   CGFloat _hourAngle;
 }
 
+- (id)initWithFrame:(CGRect)frame {
+  if (self = [super initWithFrame:frame]) {
+    self.opaque = NO;
+  }
+  return self;
+}
 
 - (void)drawRect:(CGRect)rect {
   CGContextRef context = UIGraphicsGetCurrentContext();
   
-  CGContextClearRect(context, self.bounds);
+  CGContextClearRect(context, rect);
 
   CGFloat cx = rect.size.width / 2;
   CGFloat cy = rect.size.height / 2;
