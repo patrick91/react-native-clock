@@ -19,19 +19,21 @@ const instructions = Platform.select({
 
 export default class App extends Component<{}> {
   state = {
-    color: "#f1f"
+    color: "#f1f",
+    angle: 0
   };
 
   componentDidMount() {
     let i = 0;
-    const colors = ["#ff1", "#f11", "#111", "#f1f"];
+    const colors = ["#ff1"];
 
     this.interval = setInterval(
       () =>
         this.setState({
-          color: colors[i++ % colors.length]
+          color: colors[i++ % colors.length],
+          angle: i
         }),
-      2000
+      0
     );
   }
 
@@ -43,6 +45,7 @@ export default class App extends Component<{}> {
         <Text style={styles.instructions}>{instructions}</Text>
         <Clock
           color={this.state.color}
+          angle={this.state.angle}
           style={{
             width: 200,
             height: 200
