@@ -3,7 +3,9 @@
 #import "UIColor+HexString.h"
 
 @implementation ClockView {
-  UIColor * _color;
+  UIColor * _secondsColor;
+  UIColor * _minutesColor;
+  UIColor * _hoursColor;
   CGFloat _secondsAngle;
   CGFloat _minuteAngle;
   CGFloat _hourAngle;
@@ -38,8 +40,7 @@
   CGContextAddLineToPoint(context, cx, cx * 2);
   CGContextStrokePath(context);
 
-  [_color setFill];
-  [[UIColor redColor] setStroke];
+  [_hoursColor setFill];
   
   // draw ticks
   
@@ -60,13 +61,14 @@
     CGContextRotateCTM(context, angle);
     
     CGContextFillRect(context, tick);
-    CGContextStrokeRect(context, tick);
     
     CGContextRestoreGState(context);
   }
   
   // draw minutes
   
+  [_minutesColor setFill];
+
   CGFloat minuteWidth = cx * 1;
   CGFloat minuteHeight = minuteWidth * 0.1;
   CGRect rectangle = CGRectMake(
@@ -86,8 +88,7 @@
 
   // draw hours
   
-  [[UIColor purpleColor] setFill];
-  [[UIColor redColor] setStroke];
+  [_hoursColor setFill];
   
   CGFloat hourWidth = cx * 0.8;
   CGFloat hourHeight = minuteWidth * 0.1;
@@ -108,7 +109,7 @@
   
   // draw seconds
   
-  [[UIColor yellowColor] setFill];
+  [_secondsColor setFill];
   
   CGFloat secondsWidth = cx * 0.8;
   CGFloat secondsHeight = minuteWidth * 0.03;
@@ -135,8 +136,18 @@
   CGContextStrokePath(context);
 }
 
-- (void)setColor:(NSString *) colorString {
-  _color = [UIColor colorWithHexString:colorString];
+- (void)setSecondsColor:(NSString *) colorString {
+  _secondsColor = [UIColor colorWithHexString:colorString];
+  [self setNeedsDisplay];
+}
+
+- (void)setMinutesColor:(NSString *) colorString {
+  _minutesColor = [UIColor colorWithHexString:colorString];
+  [self setNeedsDisplay];
+}
+
+- (void)setHoursColor:(NSString *) colorString {
+  _hoursColor = [UIColor colorWithHexString:colorString];
   [self setNeedsDisplay];
 }
 

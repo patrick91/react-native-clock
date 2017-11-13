@@ -9,7 +9,9 @@ class ClockView extends React.Component {
 }
 
 ClockView.propTypes = {
-  color: PropTypes.string,
+  secondsColor: PropTypes.string,
+  minutesColor: PropTypes.string,
+  hoursColor: PropTypes.string,
   seconds: PropTypes.number,
   minute: PropTypes.number,
   hour: PropTypes.number

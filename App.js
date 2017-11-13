@@ -50,7 +50,9 @@ export default class App extends Component<{}> {
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Clock
-          color={this.state.color}
+          secondsColor="#f00"
+          minutesColor="#000"
+          hoursColor="#000"
           seconds={seconds}
           minute={minute}
           hour={hour}
@@ -59,7 +61,9 @@ export default class App extends Component<{}> {
             height: 200
           }}
         />
-        <Text>{hour}:{minute}:{seconds}</Text>
+        <Text>
+          {hour}:{minute}:{seconds}
+        </Text>
       </View>
     );
   }
